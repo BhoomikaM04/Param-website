@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: DM Sans;
+    padding-top: 100px;
+
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 200px;
+    }
+}
+
+.div1 {
+    background-color: #9B70FF;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+
+.whatsapp-button {
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    background-color: white;
+    font-size: 18px;
+}
+
+@media (max-width: 576px) {
+    .div1 {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .whatsapp-button {
+        margin-left: 0;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.navbar .container-fluid {
+    align-items: stretch;
+}
+
+.navbar .dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dropdown.show .dropdown-arrow,
+.dropdown-toggle.show .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbar {
+    border-bottom: 2px solid black;
+}
+
+.nav-link.dropdown-toggle {
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+}
+
+/* .dropdown-menu.show {
+    display: flex !important;
+    flex-direction: row;
+} */
+.strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.svg {
+    border: 2px solid gray;
+    padding: 16px 20px;
+    border-radius: 25%;
+    background-color: #e6e4e4;
+}
+
+
+.get-your-pass-button {
+    width: 150px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media (max-width: 768px) {
+    .get-your-pass-button {
+        width: 100%;
+    }
+}
+.background {
+    background-image: url("culture-images/culture-background");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 250px 80px;
+}
+
+.title {
+    display: inline-block;
+    border-bottom: 3px solid white;
+    padding-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .background {
+        padding: 120px 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .background {
+        padding: 80px 20px;
+    }
+}
+
