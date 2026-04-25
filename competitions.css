@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: DM Sans;
+    padding-top: 120px;
+
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 200px;
+    }
+}
+
+.div1 {
+    background-color: #9B70FF;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+
+    /* FIXES */
+    min-height: 50px;
+    /* instead of fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* allows wrapping on small screens */
+    text-align: center;
+}
+
+
+
+.whatsapp-button {
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    background-color: white;
+    font-size: 18px;
+}
+
+/* 📱 Mobile fix */
+@media (max-width: 576px) {
+    .div1 {
+        flex-direction: column;
+        /* stack text + button */
+        gap: 5px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .whatsapp-button {
+        margin-left: 0;
+        font-size: 14px;
+        font-weight: 500;
+        /* remove side gap */
+    }
+}
+
+.navbar .container-fluid {
+    align-items: stretch;
+    /* override Bootstrap center */
+}
+
+.navbar .dropdown-toggle::after {
+    display: none;
+}
+
+
+/* smooth animation */
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* when dropdown is open → rotate to ^ */
+.dropdown.show .dropdown-arrow,
+.dropdown-toggle.show .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+    /* removes blue outline on click */
+
+}
+
+.navbar {
+    border-bottom: 2px solid black;
+}
+
+.nav-link.dropdown-toggle {
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+}
+
+/* .dropdown-menu.show {
+    display: flex !important;
+    flex-direction: row;
+} */
+.strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.svg {
+    border: 2px solid gray;
+    padding: 16px 20px;
+    border-radius: 25%;
+    background-color: #e6e4e4;
+}
+
+
+.get-your-pass-button {
+    width: 150px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media (max-width: 768px) {
+    .get-your-pass-button {
+        width: 100%;
+    }
+}
+.sub-dropdown {
+    border-radius: 3px !important;
+    border: 2px solid #dee2e6;
+}
+.sub-dropdown:hover {
+    border-color: powderblue !important;
+    box-shadow: 0 0 5px powderblue !important;
+}
+
+.sub-dropdown::after {
+    display: none !important;
+}
+
+
+/* TABLET + DESKTOP = row */
+@media (min-width: 768px) {
+    .filter-row {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+:root {
+    --dropdown-width: 250px;
+}
+
+/* ===== COMMON WIDTH ===== */
+.dropdown button {
+    width: 100%;
+}
+
+/* ===== SUB DROPDOWNS ===== */
+.filter-row .dropdown {
+    flex: 1 1 100%;        /* mobile full width */
+    max-width: 100%;
+}
+
+/* ===== MOBILE (default) ===== */
+.filter-row {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== SMALL (≥576px) → 2 per row ===== */
+@media (min-width: 576px) {
+    .filter-row .dropdown {
+        flex: 1 1 calc(50% - 12px);
+        max-width: calc(50% - 12px);
+    }
+}
+
+/* ===== TABLET + DESKTOP (≥768px) ===== */
+@media (min-width: 768px) {
+    .filter-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .filter-row .dropdown {
+        flex: 0 0 var(--dropdown-width);   /* fixed 250px */
+        max-width: var(--dropdown-width);
+    }
+}
+
+/* ===== MAIN DROPDOWN ===== */
+#dropdownMain {
+    width: 100%;
+    max-width: var(--dropdown-width);
+}
+
+/* ===== CONTAINER ===== */
+.workshop-card {
+    padding: 0 20px;
+    gap: 20px !important;
+}
+
+/* ===== BADGE ===== */
+.date-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+/* ===== CARD ===== */
+.workshop {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #d4cbcb;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* IMAGE */
+.workshop img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* BODY */
+.card-body2 {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TEXT */
+.card-title {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+/* ===== MOBILE ===== */
+.workshop {
+    flex: 0 0 100%;
+}
+
+/* ===== SMALL DEVICES ===== */
+@media (min-width: 576px) {
+    .workshop {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/* ===== TABLET (2x2 GRID) ===== */
+@media (min-width: 768px) {
+    .workshop {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/* ===== DESKTOP (3 PER ROW) ===== */
+@media (min-width: 1024px) {
+    .workshop {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+
+    .workshop-card {
+        max-width: 1320px;
+        margin: auto;
+        padding: 0;
+    }
+}
+
+.f-above-section{
+    background-color: #f5efe0 !important;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    
+}
+.f-h1{
+    font-size: 35px;
+    font-weight: 700;
+    max-width: 517px;
+}
+.form-control {
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    background-color: #f5efe0 !important;    
+}
+.form-control:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #f5efe0 !important;
+}
+.text{
+    border: 5px solid white;
+    border-radius: 0 !important;
+    caret-color: white;
+}
+.text:focus{
+    border: 5px solid white;
+    outline: none;
+}
+.i1{
+    background-color: #9B70FF;
+    color: white;
+}
+.f-above-section{
+    position: relative;
+    z-index: 2;
+    margin-bottom: -80px;  
+}
+.bg-dark{
+    padding-top: 120px;  
+}
+/* Tablet */
+@media (max-width: 992px) {
+    .f-above-section{
+        margin-bottom: -60px;
+    }
+
+    .bg-dark{
+        padding-top: 100px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .f-above-section{
+        margin-bottom: -40px;
+    }
+
+    .bg-dark{
+        padding-top: 80px;
+    }
+}
+
+
