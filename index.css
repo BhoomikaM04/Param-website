@@ -182,6 +182,7 @@ body {
 
 
 
+
 .card {
     border-radius: 34px !important;
     overflow: hidden;
@@ -318,7 +319,7 @@ body {
     gap: 20px;
     justify-content: start;
     flex-wrap: wrap;
-    margin-left: 150px;
+   
 }
 
 

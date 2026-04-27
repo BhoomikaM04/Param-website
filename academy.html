@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Competitions</title>
-    <link rel="stylesheet" href="competitions.css">
+    <title>Academy</title>
+    <link rel="stylesheet" href="academy.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -170,255 +170,173 @@
             <button class="get-your-pass-button">GET YOUR PASS</button>
         </nav>
     </div>
-    
-    
+    <div class="container overflow-hidden">
+        <div class="row align-items-center g-3 g-lg-5 pt-3 pt-lg-5">
 
-    <h1 class="text-center mb-4 mt-5 fw-bold">
-    <span class="text-danger">Event Type : </span>Talks
-</h1>
-<!-- MAIN DROPDOWN -->
-<div class="container">
-    <div class="d-flex justify-content-center justify-content-md-start  ">
-        <div class="dropdown w-100 w-md-auto ">
-            <button class=" bg-transparent dropdown-toggle sub-dropdown py-2 nav-filter-btn" style="width: 260px; " type="button" id="dropdownMenuButton2"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Select Event Type
-            <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-        </button>
-            <ul class="dropdown-menu w-100" style="max-width:250px;">
-                <li><a class="dropdown-item active" href="#">Select Event Type</a></li>
-                <li><a class="dropdown-item" href="#">Workshops</a></li>
-                <li><a class="dropdown-item" href="meetups.html">Meetups</a></li>
-                <li><a class="dropdown-item" href="#">Talks</a></li>
-                <li><a class="dropdown-item" href="competitions.html">Competitions</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<br>
+            <!-- TEXT -->
+            <div class="col-12 col-lg-6 align-items-center text-lg-start">
+                <p class="banner-text d-flex flex-column gap-2 gap-md-3 m-0">
 
-<!-- main-dropdown-js -->
-<script>
-document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    <strong class="banner-heading fs-1 fs-md-1 fs-lg-1">
+                        Academy Programs
+                    </strong>
 
-    const button = dropdown.querySelector('.nav-filter-btn');
-    const items = dropdown.querySelectorAll('.dropdown-item');
+                    <span class="banner-text fs-5 fs-md-5 fs-lg-5 large-md-normal">
+                        Creating a lasting impact through engagement and collaboration.<br><br>
+                        Param's long-term vision is to create a lasting impact. To achieve this, we
+                        engage with youngsters and professionals, offering upskilling opportunities
+                        and co-creating various programs in partnership with international
+                        organizations.
+                    </span>
 
-    items.forEach(item => {
-        item.addEventListener('click', function (e) {
-
-            const value = this.textContent.trim();
-
-            // allow navigation after UI update
-            e.preventDefault();
-
-            // set button with X
-            button.innerHTML = `
-                ${value}
-                <span class="clear-nav" style="cursor:pointer; margin-left:8px;">✕</span>
-            `;
-
-            // redirect after slight delay (so UI updates first)
-            setTimeout(() => {
-                window.location.href = this.getAttribute('href');
-            }, 150);
-
-            // handle reset (only UI, no navigation)
-            button.querySelector('.clear-nav').addEventListener('click', function (e) {
-                e.stopPropagation();
-
-                button.innerHTML = `
-                    Select Event Type
-                    <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-                `;
-            });
-
-        });
-    });
-
-});
-</script>
-
-<!-- SUB DROPDOWNS -->
-<div class="container">
-  <div class="filter-row d-flex flex-wrap gap-5 justify-content-center justify-content-md-start">
-
-        <!-- Dropdown 1 -->
-        <div class="dropdown">
-            <button class=" bg-transparent sub-dropdown filter-btn py-2" style="width: 260px; " type="button" 
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Select Event Type
-            <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-        </button>
-            <ul class="dropdown-menu w-100" style="max-width:250px;">
-                <li><a class="dropdown-item active" href="#">PARSEC-Jayanagar</a></li>
-            </ul>
-        </div>
-
-        <!-- Dropdown 2 -->
-        <div class="dropdown">
-            <button class=" bg-transparent sub-dropdown filter-btn py-2" style="width: 260px; " type="button" 
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Select Event Type
-            <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-        </button>
-            <ul class="dropdown-menu w-100" style="max-width:250px;">
-                <li><a class="dropdown-item active" href="#">Science</a></li>
-            </ul>
-        </div>
-
-        <!-- Dropdown 3 -->
-        <div class="dropdown">
-            <button class=" bg-transparent  sub-dropdown filter-btn py-2" style="width: 260px; " type="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Select Event Type
-            <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-        </button>
-            <ul class="dropdown-menu w-100" style="max-width:250px;">
-                <li><a class="dropdown-item active" href="#">General Public</a></li>
-            </ul>
-        </div>
-
-        <!-- Dropdown 4 -->
-        <div class="dropdown">
-            <button class=" bg-transparent sub-dropdown filter-btn py-2" style="width: 260px; " type="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Select Event Type
-            <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-        </button>
-            <ul class="dropdown-menu w-100" style="max-width:250px;">
-                <li><a class="dropdown-item active" href="#">Paid</a></li>
-            </ul>
-        </div>
-
-    </div>
-</div>
-
-
-    <div class="workshop-card d-flex justify-content-center flex-row flex-wrap gap-4 mt-3">
-        <!-- First Card -->
-        <div class="workshop card-item">
-            <div class="card2 w-100" style="width:14rem;">
-                <span class="date-badge badge text-bg-light px-2.5  fs-5">19<br>
-                    <p class="fs-6 pt-1 mb-1">DEC</p>
-                </span>
-                <img src="competitions-images/journey-to-mars.webp" class="card-img-top" alt="...">
-                <div class="card-body2 p-3">
-                     <p class="card-text">2025-12-19 00:00:00</p>
-                    <h1 class="card-title text-start mb-3">Journey to Mars</h1>
-                    <div class="time d-flex flex-row gap-2 w-100 mb-2">
-                        <img src="index-images/clock.png" alt="" style="width: 15px; height: 15px; margin-top: 5px;">
-                        <p class="card-text ">Dec 19 |12:00 AM - Dec 21 | 11:30 PM</p>
-                    </div>
-                    <div class="location d-flex flex-row gap-2 w-100">
-                        <img src="index-images/maps-and-flags.png" alt=""
-                            style="width: 15px; height: 15px; margin-top: 5px;">
-                        <p class="card-text ">PARSEC Jayanagar</p>
-                    </div>
-                    <button class="workshop-btn btn-light border-0 py-1 mt-2 w-50">Competitions</button>
-                </div>
+                </p>
             </div>
-        </div>
-        <!-- Second Card -->
-        <div class="workshop card-item">
-            <div class="card2 w-100" style="width:14 rem;">
-                <span class="date-badge badge text-bg-light px-2.5  fs-5">22<br>
-                    <p class="fs-6 pt-1 mb-1">JAN</p>
-                </span>
-                <img src="competitions-images/hackwire.webp" class="card-img-top" alt="...">
-                <div class="card-body2 p-3">
-                    <p class="card-text">2026-01-22 00:00:00</p>
-                    <h1 class="card-title text-start mb-3">HackWire : Hardware Hackathon</h1>
-                    <div class="time d-flex flex-row gap-2 w-100 mb-2">
-                        <img src="index-images/clock.png" alt="" style="width: 15px; height: 15px; margin-top: 5px;">
-                        <p class="card-text ">Jan 22 | 12:00 AM - Jan 24 | 11:30 PM</p>
-                    </div>
-                    <div class="location d-flex flex-row gap-2 w-100">
-                        <img src="index-images/maps-and-flags.png" alt=""
-                            style="width: 15px; height: 15px; margin-top: 5px;">
-                        <p class="card-text ">Manipal Institute of Technology, Bengaluru</p>
-                    </div>
-                    <button class="workshop-btn btn-light border-0 py-1 mt-2 w-50">Competitions</button>
 
-                </div>
-            </div>
-        </div>
-        <!-- Third Card -->
-        <div class="workshop card-item">
-            <div class="card2 w-100" style="width:14rem;">
-                <span class="date-badge badge text-bg-light px-2.5  fs-5">22<br>
-                    <p class="fs-6 pt-1 mb-1">JUL</p>
-                </span>
-                <img src="competitions-images/photography.webp" class="card-img-top" alt="...">
-                <div class="card-body2 p-3">
-                    <p class="card-text">2024-07-22 00:00:00</p>
-                    <h1 class="card-title text-start mb-3">Param science photography contest</h1>
-                    <div class="time d-flex flex-row gap-2 w-100 mb-2">
-                        <img src="index-images/clock.png" alt="" style="width: 15px; height: 15px; margin-top: 5px;">
-                        <p class="card-text ">Jul 22 | 12:00 AM - Jul 24 | 11:30 PM</p>
-                    </div>
-                    <div class="location d-flex flex-row gap-2 w-100">
-                        <img src="index-images/maps-and-flags.png" alt=""
-                            style="width: 15px; height: 15px; margin-top: 5px;">
-                        <p class="card-text ">NA</p>
-                    </div>
-                    <button class="workshop-btn btn-light border-0 py-1 mt-2 w-50">Competitions</button>
-
+            <!-- Image -->
+            <div class="col-12 col-lg-6">
+                <div class="video-wrapper  ">
+                    <img src="culture-images/academy1.webp" alt="">
                 </div>
             </div>
         </div>
     </div>
-    </div><br>
 
-<!-- sub-dropdown-js -->
-<script>
-document.querySelectorAll('.dropdown').forEach(dropdown => {
+    <!-- our initiatives -->
+<h1 class="text-center m-5">Our Initiatives</h1>
+    <div class="container my-5">
+        <div class="row g-4">
 
-    const button = dropdown.querySelector('.filter-btn');
-    const items = dropdown.querySelectorAll('.dropdown-item');
-    const cards = document.querySelectorAll('.card-item');
+            <!-- CARD 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-2 rounded-5">
 
-    items.forEach(item => {
-        item.addEventListener('click', function (e) {
+                    <div class="img-box">
+                        <img src="culture-images/academy2.webp" alt="">
+                    </div>
 
-            e.preventDefault(); // stop anchor jump
+                    <div class="card-body text-start">
+                        <h5 class="card-title">Teacher Training Program</h5>
+                        <p class="card-text">
+                            Empowering educators with modern
+                            teaching methodologies, practical skills, and
+                            innovative classroom strategies for a lasting
+                            impact.
+                        </p>
+                    </div>
 
-            const value = this.textContent.trim();
+                </div>
+            </div>
 
-            // set button text with X
-            button.innerHTML = `
-                ${value}
-                <span class="clear-btn" style="cursor:pointer; margin-left:8px;">✕</span>
-            `;
+            <!-- CARD 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100  border-2 rounded-5">
 
-            // show only first 2 cards
-            cards.forEach((card, index) => {
-                card.style.display = index < 2 ? "flex" : "none";
-            });
+                    <div class="img-box">
+                        <img src="culture-images/academy3.webp" alt="">
+                    </div>
 
-            // handle X click
-            button.querySelector('.clear-btn').addEventListener('click', function (e) {
-                e.stopPropagation();
+                    <div class="card-body">
+                        <h5 class="card-title">Student Leadership Program</h5>
+                        <p class="card-text">
+                            Empowering future innovators and
+                            entrepreneurs through mentorship,
+                            innovation, incubation, and CoEs.
+                        </p>
+                    </div>
 
-                button.innerHTML = `
-                    Select Event Type
-                    <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-                `;
+                </div>
+            </div>
 
-                cards.forEach(card => {
-                    card.style.display = "flex";
-                });
-            });
+            <!-- CARD 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-2 rounded-5">
 
-        });
-    });
+                    <div class="img-box">
+                        <img src="culture-images/academy4.webp" alt="">
+                    </div>
 
-});
-</script>
+                    <div class="card-body">
+                        <h5 class="card-title">Student Membership</h5>
+                        <p class="card-text">
+                            Providing exclusive benefits, valuable
+                            resources, and networking opportunities to
+                            foster continuous learning and professional
+                            growth for students.
+                        </p>
+                    </div>
 
-<div class="container ">
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-2 rounded-5">
+
+                    <div class="img-box">
+                        <img src="culture-images/academy5.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Grants</h5>
+                        <p class="card-text">
+                            Offering crucial financial support and
+                            resources for groundbreaking innovative
+                            projects, research initiatives, and
+                            community-driven endeavors.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-2 rounded-5">
+
+                    <div class="img-box">
+                        <img src="culture-images/academy6.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Residencies</h5>
+                        <p class="card-text">
+                            Providing immersive and enriching
+                            experiences for professionals and emerging
+                            artists across diverse fields, fostering
+                            creativity and collaboration.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-2 rounded-5">
+
+                    <div class="img-box">
+                        <img src="culture-images/academy7.webp" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Institute Membership</h5>
+                        <p class="card-text">
+                            STEM education through hands-on
+                            experiences, expert mentorship, and access
+                            to global resources and collaborations.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+      <!-- footer -->
+    <div class="container ">
         <div class="f-above-section card col-12 d-flex flex-column flex-lg-row 
-                justify-content-between align-items-center gap-4 px-3 px-lg-5 rounded-5">
+                justify-content-between align-items-center gap-4 px-3 px-lg-5 rounded-5 mt-5">
 
             <h1 class="f-h1 text-center text-lg-start">
                 Stay Connected For Latest
@@ -435,7 +353,7 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
             </div>
         </div>
     </div>
-
+    
     <div class="container-fluid bg-dark">
         <div class="container">
         <div class="row position-relative">
@@ -497,10 +415,12 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
         </div>
         </div>
     </div>
-    
 
 
-<!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>    
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
