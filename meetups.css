@@ -15,25 +15,23 @@ body {
         padding-top: 200px;
     }
 }
-
+.dropdown-item {
+    pointer-events: auto;
+}
+/* ================= TOP BAR ================= */
+/* ================= TOP BAR ================= */
 .div1 {
     background-color: #9B70FF;
     padding: 10px;
     font-size: 18px;
     font-weight: 400;
-
-    /* FIXES */
     min-height: 50px;
-    /* instead of fixed height */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    /* allows wrapping on small screens */
     text-align: center;
 }
-
-
 
 .whatsapp-button {
     margin-left: 10px;
@@ -44,98 +42,219 @@ body {
     font-size: 18px;
 }
 
-/* 📱 Mobile fix */
+/* MOBILE TOP BAR */
 @media (max-width: 576px) {
     .div1 {
         flex-direction: column;
-        /* stack text + button */
         gap: 5px;
         font-size: 14px;
-        font-weight: 500;
     }
 
     .whatsapp-button {
         margin-left: 0;
         font-size: 14px;
-        font-weight: 500;
-        /* remove side gap */
     }
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    border-bottom: 2px solid black;
 }
 
 .navbar .container-fluid {
     align-items: stretch;
-    /* override Bootstrap center */
-}
-
-.navbar .dropdown-toggle::after {
-    display: none;
-}
-
-
-/* smooth animation */
-.dropdown-arrow {
-    transition: transform 0.3s ease;
-}
-
-/* when dropdown is open → rotate to ^ */
-.dropdown.show .dropdown-arrow,
-.dropdown-toggle.show .dropdown-arrow {
-    transform: rotate(180deg);
 }
 
 .navbar-toggler {
     border: none !important;
     box-shadow: none !important;
-    /* removes blue outline on click */
-
 }
 
-.navbar {
-    border-bottom: 2px solid black;
+/* REMOVE DEFAULT BOOTSTRAP ARROW */
+.navbar .dropdown-toggle::after {
+    display: none;
 }
 
+/* NAV LINKS */
 .nav-link.dropdown-toggle {
     font-size: 17px;
     font-weight: 500;
-    color: black;
+    color: black !important;
 }
 
-/* .dropdown-menu.show {
-    display: flex !important;
-    flex-direction: row;
-} */
-.strong {
-    font-weight: bold;
-    font-size: 20px;
+/* ================= CUSTOM ARROW ================= */
+.dropdown-arrow {
+    transition: transform 0.3s ease;
 }
 
+.dropdown.show .dropdown-arrow,
+.dropdown-toggle.show .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* ================= MEGA MENU ================= */
+
+/* Desktop only full-width */
+@media (min-width: 992px) {
+    .nav-item.dropdown {
+        position: static;
+    }
+
+    .dropdown-menu.mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        border: none;
+        padding: 30px;
+    }
+}
+
+/* Tablet & Mobile */
+@media (max-width: 991px) {
+    .nav-item.dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu.mega-menu {
+        width: 100%;
+        position: relative;
+        left: auto;
+        right: auto;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .dropdown-menu li {
+        margin-bottom: 10px;
+    }
+}
+
+/* ================= DROPDOWN ITEMS ================= */
+
+/* REMOVE BULLETS */
+.dropdown-menu li {
+    list-style: none;
+}
+
+/* KEEP SVG + TEXT ALWAYS IN ROW */
+.dropdown-item {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: 12px;
+    white-space: normal;
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* ICON */
 .svg {
+    min-width: 70px;
+    flex-shrink: 0;
     border: 2px solid gray;
     padding: 16px 20px;
     border-radius: 25%;
     background-color: #e6e4e4;
 }
 
+/* TEXT */
+.dropdown-item p {
+    margin: 0;
+}
 
+.strong {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* HOVER */
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* REMOVE BLUE CLICK EFFECT */
+.dropdown-item:focus,
+.dropdown-item:active {
+    background-color: transparent !important;
+    color: black !important;
+}
+
+/* ================= BUTTON ================= */
 .get-your-pass-button {
     width: 150px;
     border: none;
     background-color: black;
     color: white;
-    padding-bottom: 16px;
-    padding-top: 16px;
+    padding: 16px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
+/* MOBILE BUTTON */
 @media (max-width: 768px) {
     .get-your-pass-button {
         width: 100%;
     }
 }
 
+/* ================= EXTRA MOBILE POLISH ================= */
+/* ================= MOBILE FIX ================= */
+@media (max-width: 576px) {
+
+    /* Reduce dropdown padding */
+    .dropdown-menu.mega-menu {
+        padding-top: 5px !important;
+    }
+
+    /* Reduce item padding */
+    .dropdown-item {
+        padding:0 !important;
+        gap: 10px;
+    }
+
+    /* Smaller icon */
+    .svg {
+        width: 45px !important;
+        height: 45px !important;
+        padding: 8px !important;
+        min-width: 45px;
+    }
+
+    /* Reduce text size */
+    .strong {
+        font-size: 15px;
+    }
+
+    .dropdown-item p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    /* Remove extra spacing */
+    .dropdown-menu li {
+        margin-bottom: 8px;
+    }
+
+    /* Prevent overflow */
+    .dropdown-item {
+        overflow: hidden;
+    }
+     .dropdown-item p {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 321px){
+    .strong{
+        font-size: 12px;
+    }
+    .burger{
+        width: 320px !important;
+    }
+}
 /* drop-down-section */
 .sub-dropdown {
     border-radius: 3px !important;

@@ -15,7 +15,9 @@ body {
         padding-top: 200px;
     }
 }
-
+.dropdown-item {
+    pointer-events: auto;
+}
 /* ================= TOP BAR ================= */
 /* ================= TOP BAR ================= */
 .div1 {
@@ -91,7 +93,6 @@ body {
 }
 
 /* ================= MEGA MENU ================= */
-
 /* Desktop only full-width */
 @media (min-width: 992px) {
     .nav-item.dropdown {
@@ -254,212 +255,214 @@ body {
     }
 }
 
-.background {
-    background-image: url("culture-images/culture-background");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 250px 80px;
+
+.dropdown-toggle::after {
+    display: none !important;
 }
 
-.title {
-    display: inline-block;
-    border-bottom: 3px solid white;
-    padding-bottom: 8px;
+.sub-dropdown {
+    border-radius: 3px !important;
+    border: 2px solid #dee2e6;
 }
 
-@media (max-width: 768px) {
-    .background {
-        padding: 150px 30px;
-        text-align: center;
-    }
+.sub-dropdown:hover {
+    border-color: powderblue !important;
+    box-shadow: 0 0 5px powderblue !important;
 }
 
-@media (max-width: 480px) {
-    .background {
-        padding: 180px 20px;
-    }
+.card-box {
+    display: none;
 }
 
-.about {
-    display: inline-block;
-    border-bottom: 3px solid black;
-    padding-bottom: 6px;
-}
-
-.about-wrapper {
-    text-align: center;
-}
-
-.teams {
-    border: 5px solid #6941C6 !important;
-}
-
-/* underline only under text */
-.initiative-heading {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    justify-content: center;
-}
-
-.initiative-heading::after {
-    content: "";
+.card-box.active {
     display: block;
+}
+
+
+.custom-pagination .page-link {
+    border: none !important;
+    background: transparent !important;
+    color: #6c757d !important;
+    /* muted */
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* remove hover */
+.custom-pagination .page-link:hover {
+    background: transparent !important;
+    color: #000 !important;
+}
+
+/* remove blue click/focus effect */
+.custom-pagination .page-link:focus,
+.custom-pagination .page-link:active {
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: #000 !important;
+}
+
+/* active number */
+.custom-pagination .page-link.active {
+    color: #000 !important;
+    font-weight: 600;
+}
+
+/* ===== CONTAINER ===== */
+.workshop-card {
+    padding: 0 20px;
+    gap: 20px !important;
+}
+
+/* ===== BADGE ===== */
+.date-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+/* ===== CARD ===== */
+.workshop {
     width: 100%;
-    height: 3px;
-    background: black;
-    margin-top: 6px;
-}
-
-/* reduce image height */
-.initiative-img {
-    height: 300px;
-    object-fit: cover;
-}
-
-/* desktop alignment fix */
-@media (min-width: 992px) {
-    .row.align-items-start {
-        align-items: flex-start;
-    }
-}
-
-
-.slider-wrapper {
-    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #d4cbcb;
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
-.slider-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slide {
-    flex: 0 0 33.3333%;
-    padding: 10px;
-}
-
-.custom-img {
+/* IMAGE */
+.workshop img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 10px 10px 0 0;
 }
 
-/* tablet */
-@media (max-width: 992px) {
-    .slide {
-        flex: 0 0 50%;
+/* BODY */
+.card-body2 {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TEXT */
+.card-title {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+/* ===== MOBILE ===== */
+.workshop {
+    flex: 0 0 100%;
+}
+
+/* ===== SMALL DEVICES ===== */
+@media (min-width: 576px) {
+    .workshop {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/* ===== TABLET (2x2 GRID) ===== */
+@media (min-width: 768px) {
+    .workshop {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/* ===== DESKTOP (3 PER ROW) ===== */
+@media (min-width: 1024px) {
+    .workshop {
+        flex: 0 0 calc(33.333% - 20px);
     }
 
-    .custom-img {
-        height: 200px;
+    .workshop-card {
+        max-width: 1320px;
+        margin: auto;
+        padding: 0;
     }
-}
-
-/* mobile */
-@media (max-width: 576px) {
-    .slide {
-        flex: 0 0 100%;
-    }
-
-    .custom-img {
-        height: 180px;
-    }
-}
-
-.arrow-btn {
-    background: #FB8B4B;
-    color: black;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.left-arrow {
-    left: 10px;
-}
-
-.right-arrow {
-    right: 10px;
-}
-
-
-/* card-sec-above-footer */
-.card-custom {
-    background-image: url(history-images/history-background.svg);
-    object-fit: cover;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 /* footer */
 
-.f-above-section{
+.f-above-section {
     background-color: #f5efe0 !important;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    
+
 }
-.f-h1{
+
+.f-h1 {
     font-size: 35px;
     font-weight: 700;
     max-width: 517px;
 }
+
 .form-control {
     border: 1px solid black !important;
     border-radius: 0 !important;
-    background-color: #f5efe0 !important;    
+    background-color: #f5efe0 !important;
 }
-.form-control:focus{
+
+.form-control:focus {
     outline: none !important;
     box-shadow: none !important;
     background-color: #f5efe0 !important;
 }
-.text{
+
+.text {
     border: 5px solid white;
     border-radius: 0 !important;
     caret-color: white;
 }
-.text:focus{
+
+.text:focus {
     border: 5px solid white;
     outline: none;
 }
-.i1{
+
+.i1 {
     background-color: #9B70FF;
     color: white;
 }
-.f-above-section{
+
+.f-above-section {
     position: relative;
     z-index: 2;
-    margin-bottom: -80px;  
+    margin-bottom: -80px;
 }
-.bg-dark{
-    padding-top: 120px;  
+
+.bg-dark {
+    padding-top: 120px;
 }
+
 /* Tablet */
 @media (max-width: 992px) {
-    .f-above-section{
+    .f-above-section {
         margin-bottom: -60px;
     }
 
-    .bg-dark{
+    .bg-dark {
         padding-top: 100px;
     }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-    .f-above-section{
+    .f-above-section {
         margin-bottom: -40px;
     }
 
-    .bg-dark{
+    .bg-dark {
         padding-top: 80px;
     }
 }
