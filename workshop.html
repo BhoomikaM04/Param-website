@@ -328,7 +328,7 @@
 
     <h1 class="text-center mb-5 mt-5 fw-bold">Workshops | Meetups | Seminars | Talks</h1>
     <!-- MAIN DROPDOWN -->
-    <div class="container">
+    <div class="container event-filter-dropdown">
         <div class="d-flex justify-content-center justify-content-md-start  ">
             <div class="dropdown w-100 w-md-auto ">
                 <button class=" bg-transparent dropdown-toggle sub-dropdown py-2 nav-filter-btn" style="width: 260px; "
@@ -348,42 +348,47 @@
     <br>
 
     <!-- main-dropdown-js -->
-    <script>
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
+       <script>
+        document.querySelectorAll('.nav-filter-btn').forEach(button => {
 
-            const button = dropdown.querySelector('.nav-filter-btn');
+            const dropdown = button.closest('.dropdown');
             const items = dropdown.querySelectorAll('.dropdown-item');
 
             items.forEach(item => {
                 item.addEventListener('click', function (e) {
 
+                    // ONLY prevent if it's the same page (#)
+                    const link = this.getAttribute('href');
+                    if (link === "#") {
+                        e.preventDefault();
+                    }
+
                     const value = this.textContent.trim();
 
-                    // allow navigation after UI update
-                    e.preventDefault();
-
-                    // set button with X
+                    // update UI
                     button.innerHTML = `
                 ${value}
                 <span class="clear-nav" style="cursor:pointer; margin-left:8px;">✕</span>
             `;
 
-                    // redirect after slight delay (so UI updates first)
-                    setTimeout(() => {
-                        window.location.href = this.getAttribute('href');
-                    }, 150);
-
-                    // handle reset (only UI, no navigation)
-                    button.querySelector('.clear-nav').addEventListener('click', function (e) {
-                        e.stopPropagation();
-
-                        button.innerHTML = `
-                    Select Event Type
-                    <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-                `;
-                    });
+                    // navigate ONLY if real link
+                    if (link && link !== "#") {
+                        window.location.href = link;
+                    }
 
                 });
+            });
+
+            // CLEAR BUTTON (attach once, not inside click)
+            button.addEventListener('click', function (e) {
+                if (e.target.classList.contains('clear-nav')) {
+                    e.stopPropagation();
+
+                    button.innerHTML = `
+                Select Event Type
+                <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
+            `;
+                }
             });
 
         });

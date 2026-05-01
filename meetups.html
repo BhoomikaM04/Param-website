@@ -25,7 +25,7 @@
             <button class="whatsapp-button px-1">Join Now</button>
         </div>
 
- <nav class="navbar navbar-expand-lg navbar-light p-0 bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light p-0 bg-white">
 
             <a href="index.html"><img src="index-images/logo.webp" alt="logo" width="200px" height="50px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -48,7 +48,8 @@
 
                                     <!-- ITEM 1 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="International-Flagship-Centre.html">
+                                        <a class="dropdown-item d-flex align-items-start"
+                                            href="International-Flagship-Centre.html">
                                             <svg class="svg " width="70px" height="70px" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -326,10 +327,10 @@
     </div>
 
 
-    
-<!-- drop-downs -->
+
+    <!-- drop-downs -->
     <h1 class="text-center mb-4 mt-5 fw-bold"><span class="text-danger">Event Type : </span>Meetups</h1>
-    <div class="container">
+    <div class="container event-filter-dropdown">
         <div class="dropdown">
             <button class=" bg-transparent dropdown-toggle sub-dropdown py-2 nav-filter-btn" style="width: 220px; "
                 type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -348,41 +349,46 @@
 
     <!-- main-dropdown-js -->
     <script>
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
+        document.querySelectorAll('.nav-filter-btn').forEach(button => {
 
-            const button = dropdown.querySelector('.nav-filter-btn');
+            const dropdown = button.closest('.dropdown');
             const items = dropdown.querySelectorAll('.dropdown-item');
 
             items.forEach(item => {
                 item.addEventListener('click', function (e) {
 
+                    // ONLY prevent if it's the same page (#)
+                    const link = this.getAttribute('href');
+                    if (link === "#") {
+                        e.preventDefault();
+                    }
+
                     const value = this.textContent.trim();
 
-                    // allow navigation after UI update
-                    e.preventDefault();
-
-                    // set button with X
+                    // update UI
                     button.innerHTML = `
                 ${value}
                 <span class="clear-nav" style="cursor:pointer; margin-left:8px;">✕</span>
             `;
 
-                    // redirect after slight delay (so UI updates first)
-                    setTimeout(() => {
-                        window.location.href = this.getAttribute('href');
-                    }, 150);
-
-                    // handle reset (only UI, no navigation)
-                    button.querySelector('.clear-nav').addEventListener('click', function (e) {
-                        e.stopPropagation();
-
-                        button.innerHTML = `
-                    Select Event Type
-                    <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
-                `;
-                    });
+                    // navigate ONLY if real link
+                    if (link && link !== "#") {
+                        window.location.href = link;
+                    }
 
                 });
+            });
+
+            // CLEAR BUTTON (attach once, not inside click)
+            button.addEventListener('click', function (e) {
+                if (e.target.classList.contains('clear-nav')) {
+                    e.stopPropagation();
+
+                    button.innerHTML = `
+                Select Event Type
+                <img src="index-images/menu-arrow.png" class="dropdown-arrow ms-3" width="20">
+            `;
+                }
             });
 
         });
@@ -520,63 +526,64 @@
 
     <div class="container-fluid bg-dark">
         <div class="container">
-        <div class="row position-relative">
+            <div class="row position-relative">
 
-            <div
-                class="col-12 d-flex flex-column flex-lg-row flex-wrap justify-content-center align-items-start gap-3 mt-5 pt-5">
+                <div
+                    class="col-12 d-flex flex-column flex-lg-row flex-wrap justify-content-center align-items-start gap-3 mt-5 pt-5">
 
-                <!-- ORGANISATION -->
-                <div class="org col-12 col-md-6 col-lg-3">
-                    <h6 class="organisation text-secondary fw-bold mb-0">ORGANISATION</h6>
-                    <ul class="foot text-white list-unstyled fw-medium">
-                        <li>About Us</li>
-                        <li>Organisation</li>
-                        <li>Media - Toolkit</li>
-                        <li>Book Facilities</li>
-                        <li>80G | 12A | CSR-1 | FCRA</li>
-                    </ul>
+                    <!-- ORGANISATION -->
+                    <div class="org col-12 col-md-6 col-lg-3">
+                        <h6 class="organisation text-secondary fw-bold mb-0">ORGANISATION</h6>
+                        <ul class="foot text-white list-unstyled fw-medium">
+                            <li>About Us</li>
+                            <li>Organisation</li>
+                            <li>Media - Toolkit</li>
+                            <li>Book Facilities</li>
+                            <li>80G | 12A | CSR-1 | FCRA</li>
+                        </ul>
+                    </div>
+
+                    <div class="org col-12 col-md-6 col-lg-3">
+                        <h6 class="organisation text-secondary fw-bold mb-0">QUICK LINKS</h6>
+                        <ul class="foot text-white list-unstyled fw-medium">
+                            <li>Careers</li>
+                            <li>Contact Us</li>
+                            <li>Give Back</li>
+                            <li>Terms & Conditions</li>
+                            <li>Privacy Policy</li>
+                            <li>Refund & Cancellation</li>
+                        </ul>
+                    </div>
+
+                    <!-- SEARCH -->
+                    <div class="org col-12 col-md-6 col-lg-3">
+                        <h6 class="organisation text-secondary fw-bold mb-0">EXPLORE OUR CONTENT</h6>
+                        <input type="text" class="text bg-black w-100 px-3 py-3"
+                            placeholder="Type to start searching...">
+                    </div>
+
                 </div>
 
-                <div class="org col-12 col-md-6 col-lg-3">
-                    <h6 class="organisation text-secondary fw-bold mb-0">QUICK LINKS</h6>
-                    <ul class="foot text-white list-unstyled fw-medium">
-                        <li>Careers</li>
-                        <li>Contact Us</li>
-                        <li>Give Back</li>
-                        <li>Terms & Conditions</li>
-                        <li>Privacy Policy</li>
-                        <li>Refund & Cancellation</li>
-                    </ul>
-                </div>
+                <!-- FOOTER -->
+                <footer
+                    class="row text-white align-items-center mt-5 pt-3  pb-5 text-center d-flex flex-row justify-content-around text-lg-start">
 
-                <!-- SEARCH -->
-                <div class="org col-12 col-md-6 col-lg-3">
-                    <h6 class="organisation text-secondary fw-bold mb-0">EXPLORE OUR CONTENT</h6>
-                    <input type="text" class="text bg-black w-100 px-3 py-3" placeholder="Type to start searching...">
-                </div>
+                    <!-- LEFT -->
+                    <span class="col-12 col-lg-6 mb-3 mb-lg-0 text-center">
+                        Copyright@ 2021-22. Param Foundation. All Rights Reserved
+                    </span>
 
+                    <!-- RIGHT -->
+                    <div class="col-12 col-lg-6 d-flex justify-content-center flex-wrap gap-3 ">
+                        <i class="i1 fa-brands fa-facebook fa-lg text-white p-3 rounded-2"></i>
+                        <i class="i1 fa-brands fa-x-twitter fa-lg text-white p-3 rounded-2"></i>
+                        <i class="i1 fa-brands fa-youtube fa-lg text-white p-3 rounded-2"></i>
+                        <i class="i1 fa-brands fa-linkedin fa-lg text-white p-3 rounded-2"></i>
+                        <i class="i1 fa-brands fa-whatsapp fa-lg text-white p-3 rounded-2"></i>
+                    </div>
+
+                </footer>
             </div>
-
-            <!-- FOOTER -->
-            <footer
-                class="row text-white align-items-center mt-5 pt-3  pb-5 text-center d-flex flex-row justify-content-around text-lg-start">
-
-                <!-- LEFT -->
-                <span class="col-12 col-lg-6 mb-3 mb-lg-0 text-center">
-                    Copyright@ 2021-22. Param Foundation. All Rights Reserved
-                </span>
-
-                <!-- RIGHT -->
-                <div class="col-12 col-lg-6 d-flex justify-content-center flex-wrap gap-3 ">
-                    <i class="i1 fa-brands fa-facebook fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-x-twitter fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-youtube fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-linkedin fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-whatsapp fa-lg text-white p-3 rounded-2"></i>
-                </div>
-
-            </footer>
-        </div>
         </div>
     </div>
 

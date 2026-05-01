@@ -747,6 +747,12 @@ body {
     height: 100%;
 }
 
+@media (max-width:378px){
+    .bg-shape1 h2{
+       font-size:22px ;
+    }
+}
+
 /* IMAGE */
 .main-img {
     position: absolute;
@@ -861,14 +867,21 @@ body {
     display: block;
 }
 
-.tab-item {
-    cursor: pointer;
-    transition: 0.2s;
-}
-
 .tab-item.active {
     background: #000;
     color: #fff;
+}
+
+.tab-item.card {
+    background-color: #F6F5F3 !important;
+    color: #000 !important;
+    cursor: pointer;
+}
+
+.tab-item.card.active {
+    background-color: #000 !important;
+    color: #fff !important;
+    cursor: pointer;
 }
 
 .hover-card {
