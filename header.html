@@ -5,14 +5,293 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Param</title>
-    <link rel="stylesheet" href="example.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="head-foot.js">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            font-family: DM Sans;
+            padding-top: 120px;
+
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 200px;
+            }
+        }
+
+        .dropdown-item {
+            pointer-events: auto;
+        }
+
+        .div1 {
+            background-color: #9B70FF;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 400;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .whatsapp-button {
+            margin-left: 10px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 500;
+            background-color: white;
+            font-size: 18px;
+        }
+
+        /* MOBILE TOP BAR */
+        @media (max-width: 576px) {
+            .div1 {
+                flex-direction: column;
+                gap: 5px;
+                font-size: 14px;
+            }
+
+            .whatsapp-button {
+                margin-left: 0;
+                font-size: 14px;
+            }
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            border-bottom: 2px solid black;
+        }
+
+        .navbar .container-fluid {
+            align-items: stretch;
+        }
+
+        .navbar-toggler {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* REMOVE DEFAULT BOOTSTRAP ARROW */
+        .navbar .dropdown-toggle::after {
+            display: none;
+        }
+
+        /* NAV LINKS */
+        .nav-link.dropdown-toggle {
+            font-size: 17px;
+            font-weight: 500;
+            color: black !important;
+        }
+
+        /* ================= CUSTOM ARROW ================= */
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown.show .dropdown-arrow,
+        .dropdown-toggle.show .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* ================= MEGA MENU ================= */
+
+        /* Desktop only full-width */
+        @media (min-width: 992px) {
+            .nav-item.dropdown {
+                position: static;
+            }
+
+            .dropdown-menu.mega-menu {
+                width: 100%;
+                left: 0;
+                right: 0;
+                border-radius: 0;
+                border: none;
+                padding: 30px;
+            }
+        }
+
+        /* Tablet & Mobile */
+        @media (max-width: 991px) {
+            .nav-item.dropdown {
+                position: relative;
+            }
+
+            .dropdown-menu.mega-menu {
+                width: 100%;
+                position: relative;
+                left: auto;
+                right: auto;
+                border-radius: 10px;
+                padding: 15px;
+            }
+
+            .dropdown-menu li {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* ================= DROPDOWN ITEMS ================= */
+
+        /* REMOVE BULLETS */
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        /* KEEP SVG + TEXT ALWAYS IN ROW */
+        .dropdown-item {
+            display: flex;
+            flex-direction: row !important;
+            align-items: flex-start;
+            gap: 12px;
+            white-space: normal;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        /* ICON */
+        .svg {
+            min-width: 70px;
+            flex-shrink: 0;
+            border: 2px solid gray;
+            padding: 16px 20px;
+            border-radius: 25%;
+            background-color: #e6e4e4;
+        }
+
+        /* TEXT */
+        .dropdown-item p {
+            margin: 0;
+        }
+
+        .strong {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* HOVER */
+        .dropdown-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* REMOVE BLUE CLICK EFFECT */
+        .dropdown-item:focus,
+        .dropdown-item:active {
+            background-color: transparent !important;
+            color: black !important;
+        }
+
+        /* ================= BUTTON ================= */
+        .get-your-pass-button {
+            width: 150px;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 16px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* MOBILE BUTTON */
+        @media (max-width: 768px) {
+
+            .get-your-pass-button {
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            a:has(.get-your-pass-button) {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        /* ================= EXTRA MOBILE POLISH ================= */
+        /* ================= MOBILE FIX ================= */
+        @media (max-width: 576px) {
+
+            /* Reduce dropdown padding */
+            .dropdown-menu.mega-menu {
+                padding-top: 5px !important;
+            }
+
+            /* Reduce item padding */
+            .dropdown-item {
+                padding: 0 !important;
+                gap: 10px;
+            }
+
+            /* Smaller icon */
+            .svg {
+                width: 45px !important;
+                height: 45px !important;
+                padding: 8px !important;
+                min-width: 45px;
+            }
+
+            /* Reduce text size */
+            .strong {
+                font-size: 15px;
+            }
+
+            .dropdown-item p {
+                font-size: 13px;
+                line-height: 1.4;
+            }
+
+            /* Remove extra spacing */
+            .dropdown-menu li {
+                margin-bottom: 8px;
+            }
+
+            /* Prevent overflow */
+            .dropdown-item {
+                overflow: hidden;
+            }
+
+            .dropdown-item p {
+                margin-left: 0 !important;
+            }
+
+            .get-your-pass-button {
+                display: block;
+                width: 100%;
+            }
+
+            a:has(.get-your-pass-button) {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 321px) {
+            .strong {
+                font-size: 12px;
+            }
+
+            .burger {
+                width: 320px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -47,7 +326,8 @@
 
                                     <!-- ITEM 1 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start"
+                                            href="International-Flagship-Centre.html">
                                             <svg class="svg " width="70px" height="70px" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -65,7 +345,7 @@
 
                                     <!-- ITEM 2 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start" href="jayanagar.html">
                                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
                                                 viewBox="0 0 19 20" fill="none">
                                                 <path
@@ -147,19 +427,19 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle " href="#" id="participateDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Participate
                             <img src="index-images/menu-arrow.png" class="dropdown-arrow" alt="arrow" width="20">
                         </a>
-                        <ul class="dropdown-menu mega-menu p-md-4 p-0" aria-labelledby="visitDropdown">
+                        <ul class="dropdown-menu mega-menu p-md-4 p-0" aria-labelledby="participateDropdown">
 
                             <div class="container">
                                 <div class="burger row g-4">
 
                                     <!-- ITEM 1 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start" href="meetups.html">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="70" height="70"
                                                 viewBox="0 0 20 19" fill="none">
                                                 <path
@@ -176,7 +456,7 @@
 
                                     <!-- ITEM 2 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start" href="competitions.html">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="70" height="70"
                                                 viewBox="0 0 18 18" fill="none">
                                                 <path
@@ -190,7 +470,7 @@
                                         </a>
                                     </li>
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start" href="workshop.html">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="70" height="70"
                                                 viewBox="0 0 15 20" fill="none">
                                                 <path
@@ -215,12 +495,12 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle " href="#" id="exploredropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Explore & Learn
                             <img src="index-images/menu-arrow.png" class="dropdown-arrow" alt="arrow" width="20">
                         </a>
-                        <ul class="dropdown-menu mega-menu p-md-4 p-0" aria-labelledby="visitDropdown">
+                        <ul class="dropdown-menu mega-menu p-md-4 p-0" aria-labelledby="exploredropdown">
 
                             <div class="container">
                                 <div class="burger row g-4">
@@ -245,7 +525,7 @@
                                     <!-- ITEM 2 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
                                         <a class="dropdown-item d-flex align-items-start" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg"class="svg" width="70" height="70"
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="70" height="70"
                                                 viewBox="0 0 31 20" fill="none">
                                                 <path
                                                     d="M1.33333 1C1.33333 0.447715 1.78105 0 2.33333 0H22.3333C22.8856 0 23.3333 0.447715 23.3333 1C23.3333 1.55228 22.8856 2 22.3333 2H3.33333V14.6667H13C13.5523 14.6667 14 15.1144 14 15.6667C14 16.219 13.5523 16.6667 13 16.6667L2.33333 16.6667C1.78105 16.6667 1.33333 16.219 1.33333 15.6667V1Z"
@@ -270,19 +550,19 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="joindropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Join Hands
                             <img src="index-images/menu-arrow.png" class="dropdown-arrow" alt="arrow" width="20">
                         </a>
-                        <ul class="dropdown-menu mega-menu p-md-4 p-0" aria-labelledby="visitDropdown">
+                        <ul class="dropdown-menu mega-menu p-md-4 p-0" aria-labelledby="joindropdown">
 
                             <div class="container">
                                 <div class="burger row g-4">
 
                                     <!-- ITEM 1 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start" href="membership.html">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="70" height="70"
                                                 viewBox="0 0 22 20" fill="none">
                                                 <path
@@ -299,7 +579,7 @@
 
                                     <!-- ITEM 2 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                        <a class="dropdown-item d-flex align-items-start" href="collaborate.html">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="70" height="70"
                                                 viewBox="0 0 23 20" fill="none">
                                                 <path
@@ -308,8 +588,8 @@
                                             </svg>
                                             <p class="ms-3">
                                                 <strong class="strong">Collaborate
-                                                    </strong><br>
-                                               Let's come together and create great things.
+                                                </strong><br>
+                                                Let's come together and create great things.
                                             </p>
                                         </a>
                                     </li>
@@ -320,7 +600,8 @@
                     </li>
                 </ul>
             </div>
-            <button class="get-your-pass-button">GET YOUR PASS</button>
+            <a href="https://in.bookmyshow.com/events/param-science-experience-centre-parsec-whitefield/ET00496797"
+                class="text-decoration-none"><button class="get-your-pass-button">GET YOUR PASS</button></a>
         </nav>
     </div>
 
