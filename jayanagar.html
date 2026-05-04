@@ -25,7 +25,7 @@
             <button class="whatsapp-button px-1">Join Now</button>
         </div>
 
- <nav class="navbar navbar-expand-lg navbar-light p-0 bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light p-0 bg-white">
 
             <a href="index.html"><img src="index-images/logo.webp" alt="logo" width="200px" height="50px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -48,7 +48,8 @@
 
                                     <!-- ITEM 1 -->
                                     <li class="col-lg-6 col-md-12 col-12 visit">
-                                        <a class="dropdown-item d-flex align-items-start" href="International-Flagship-Centre.html">
+                                        <a class="dropdown-item d-flex align-items-start"
+                                            href="International-Flagship-Centre.html">
                                             <svg class="svg " width="70px" height="70px" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -392,7 +393,7 @@
         </div>
 
     </div>
-<!-- reports and publications -->
+    <!-- reports and publications -->
     <h1 class="text-center mb-4 mt-5">Reports and Publications</h1>
 
     <div class="container">
@@ -508,22 +509,22 @@
 
     </div>
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
-    const card = document.getElementById("textCard");
-    const smallCards = document.querySelectorAll(".small-card");
+            const card = document.getElementById("textCard");
+            const smallCards = document.querySelectorAll(".small-card");
 
-    function changeContent(type, el) {
+            function changeContent(type, el) {
 
-        // remove active from all
-        smallCards.forEach(c => c.classList.remove("active"));
+                // remove active from all
+                smallCards.forEach(c => c.classList.remove("active"));
 
-        // add active to clicked
-        el.classList.add("active");
+                // add active to clicked
+                el.classList.add("active");
 
-        // change content
-        if (type === 1) {
-            card.innerHTML = `
+                // change content
+                if (type === 1) {
+                    card.innerHTML = `
                 <h1>Public Transport</h1>
 
                 <h4><strong>Bus:</strong></h4>
@@ -539,36 +540,36 @@
                     <li>Take Green Line to reach the station</li>
                 </ul>
             `;
-        }
+                }
 
-        if (type === 2) {
-            card.innerHTML = `
+                if (type === 2) {
+                    card.innerHTML = `
                 <h1>By Car</h1>
                 <ul>
                     <li>Located in 32nd Cross Rd, 7th Block, Jayanagar</li>
                 </ul>
             `;
-        }
+                }
 
-        if (type === 3) {
-            card.innerHTML = `
+                if (type === 3) {
+                    card.innerHTML = `
                 <h1>Other Transport</h1>
                 <ul>
                     <li>Shuttle service coming soon...</li>
                 </ul>
             `;
-        }
-    }
+                }
+            }
 
-    // attach click listeners
-    smallCards.forEach((cardEl, index) => {
-        cardEl.addEventListener("click", () => {
-            changeContent(index + 1, cardEl);
+            // attach click listeners
+            smallCards.forEach((cardEl, index) => {
+                cardEl.addEventListener("click", () => {
+                    changeContent(index + 1, cardEl);
+                });
+            });
+
         });
-    });
-
-});
-</script>
+    </script>
 
     <!-- TAB 2 -->
     <div class="tab-content">
@@ -1205,63 +1206,69 @@
 
     <div class="container-fluid bg-dark">
         <div class="container">
-        <div class="row position-relative">
+            <div class="row position-relative">
 
-            <div
-                class="col-12 d-flex flex-column flex-lg-row flex-wrap justify-content-center align-items-start gap-3 mt-5 pt-5">
+                <div
+                    class="col-12 d-flex flex-column flex-lg-row flex-wrap justify-content-center align-items-start gap-3 mt-5 pt-5">
 
-                <!-- ORGANISATION -->
-                <div class="org col-12 col-md-6 col-lg-3">
-                    <h6 class="organisation text-secondary fw-bold mb-0">ORGANISATION</h6>
-                    <ul class="foot text-white list-unstyled fw-medium">
-                        <li>About Us</li>
-                        <li>Organisation</li>
-                        <li>Media - Toolkit</li>
-                        <li>Book Facilities</li>
-                        <li>80G | 12A | CSR-1 | FCRA</li>
-                    </ul>
+                    <!-- ORGANISATION -->
+                    <div class="org col-12 col-md-6 col-lg-3">
+                        <h6 class="organisation text-secondary fw-bold mb-0">ORGANISATION</h6>
+                        <ul class="foot text-white list-unstyled fw-medium">
+                            <li>About Us</li>
+                            <li>Organisation</li>
+                            <li>Media - Toolkit</li>
+                            <li>Book Facilities</li>
+                            <li>80G | 12A | CSR-1 | FCRA</li>
+                        </ul>
+                    </div>
+
+                    <div class="org col-12 col-md-6 col-lg-3">
+                        <h6 class="organisation text-secondary fw-bold mb-0">QUICK LINKS</h6>
+                        <ul class="foot text-white list-unstyled fw-medium">
+                            <li>Careers</li>
+                            <li>Contact Us</li>
+                            <li>Give Back</li>
+                            <li>Terms & Conditions</li>
+                            <li>Privacy Policy</li>
+                            <li>Refund & Cancellation</li>
+                        </ul>
+                    </div>
+
+                    <!-- SEARCH -->
+                    <div class="org col-12 col-md-6 col-lg-3">
+                        <h6 class="organisation text-secondary fw-bold mb-0">EXPLORE OUR CONTENT</h6>
+                        <input type="text" class="text bg-black w-100 px-3 py-3"
+                            placeholder="Type to start searching...">
+                    </div>
+
                 </div>
 
-                <div class="org col-12 col-md-6 col-lg-3">
-                    <h6 class="organisation text-secondary fw-bold mb-0">QUICK LINKS</h6>
-                    <ul class="foot text-white list-unstyled fw-medium">
-                        <li>Careers</li>
-                        <li>Contact Us</li>
-                        <li>Give Back</li>
-                        <li>Terms & Conditions</li>
-                        <li>Privacy Policy</li>
-                        <li>Refund & Cancellation</li>
-                    </ul>
-                </div>
+                <!-- FOOTER -->
+                <footer
+                    class="row text-white align-items-center mt-5 pt-3  pb-5 text-center d-flex flex-row justify-content-around text-lg-start">
 
-                <!-- SEARCH -->
-                <div class="org col-12 col-md-6 col-lg-3">
-                    <h6 class="organisation text-secondary fw-bold mb-0">EXPLORE OUR CONTENT</h6>
-                    <input type="text" class="text bg-black w-100 px-3 py-3" placeholder="Type to start searching...">
-                </div>
+                    <!-- LEFT -->
+                    <span class="col-12 col-lg-6 mb-3 mb-lg-0 text-center">
+                        Copyright@ 2021-22. Param Foundation. All Rights Reserved
+                    </span>
 
+                    <!-- RIGHT -->
+                    <div class="col-12 col-lg-6 d-flex justify-content-center flex-wrap gap-3 ">
+                        <a href="https://www.facebook.com/paramfoundation1" target="_blank"><i
+                                class="i1 fa-brands fa-facebook fa-lg text-white p-3 rounded-2"></i></a>
+                        <a href="https://x.com/paraminnovation" target="_blank"><i
+                                class="i1 fa-brands fa-x-twitter fa-lg text-white p-3 rounded-2"></i></a>
+                        <a href="https://www.youtube.com/@paramfoundation1" target="_blank"><i
+                                class="i1 fa-brands fa-youtube fa-lg text-white p-3 rounded-2"></i></a>
+                        <a href="https://www.linkedin.com/company/param-foundation/" target="_blank"><i
+                                class="i1 fa-brands fa-linkedin fa-lg text-white p-3 rounded-2"></i></a>
+                        <a href="https://www.whatsapp.com/channel/0029Vavkqa2KWEKkIMO2wk0R" target="_blank"><i
+                                class="i1 fa-brands fa-whatsapp fa-lg text-white p-3 rounded-2"></i></a>
+                    </div>
+
+                </footer>
             </div>
-
-            <!-- FOOTER -->
-            <footer
-                class="row text-white align-items-center mt-5 pt-3  pb-5 text-center d-flex flex-row justify-content-around text-lg-start">
-
-                <!-- LEFT -->
-                <span class="col-12 col-lg-6 mb-3 mb-lg-0 text-center">
-                    Copyright@ 2021-22. Param Foundation. All Rights Reserved
-                </span>
-
-                <!-- RIGHT -->
-                <div class="col-12 col-lg-6 d-flex justify-content-center flex-wrap gap-3 ">
-                    <i class="i1 fa-brands fa-facebook fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-x-twitter fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-youtube fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-linkedin fa-lg text-white p-3 rounded-2"></i>
-                    <i class="i1 fa-brands fa-whatsapp fa-lg text-white p-3 rounded-2"></i>
-                </div>
-
-            </footer>
-        </div>
         </div>
     </div>
 
