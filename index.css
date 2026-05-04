@@ -196,7 +196,15 @@ body {
 
 /* MOBILE BUTTON */
 @media (max-width: 768px) {
-    .get-your-pass-button {
+
+     .get-your-pass-button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    a:has(.get-your-pass-button) {
+        display: block;
         width: 100%;
     }
 }
@@ -245,6 +253,16 @@ body {
     }
      .dropdown-item p {
         margin-left: 0 !important;
+    }
+
+     .get-your-pass-button {
+        display: block;
+        width: 100%;
+    }
+
+    a:has(.get-your-pass-button) {
+        display: block;
+        width: 100%;
     }
 }
 
@@ -691,6 +709,15 @@ body {
     color: black;
     font-size: 28px;
     font-weight: bold;
+}
+
+.title1 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10; /* IMPORTANT */
+    color: black;
+    font-size: 28px;
 }
 
 .image-row {
