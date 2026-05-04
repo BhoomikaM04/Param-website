@@ -1079,6 +1079,26 @@ body {
     outline: none !important;
     box-shadow: none!important;
 }
+
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    border-color: #ced4da !important;  
+    background-image: none !important;
+    box-shadow: none !important;
+}
+/* .required-star {
+    position: absolute;
+    top: 12px;
+    left: 70px;
+    color: red;
+    font-weight: bold;
+    pointer-events: none;
+} */
+
+.valid-feedback {
+    display: none;
+}
 @media (max-width:576px) {
     .collab{
         width: auto!important;

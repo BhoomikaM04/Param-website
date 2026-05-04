@@ -321,7 +321,8 @@
                     </li>
                 </ul>
             </div>
-            <a href="https://in.bookmyshow.com/events/param-science-experience-centre-parsec-whitefield/ET00496797" class="text-decoration-none"><button class="get-your-pass-button">GET YOUR PASS</button></a>
+            <a href="https://in.bookmyshow.com/events/param-science-experience-centre-parsec-whitefield/ET00496797"
+                class="text-decoration-none"><button class="get-your-pass-button">GET YOUR PASS</button></a>
         </nav>
     </div>
 
@@ -809,7 +810,7 @@
                     <h2 class="title bg-white rounded-4 px-3 pb-1">Incubation Centre</h2>
 
                     <img src="index-images/Incubation-Centre (1).webp" class="main-img" alt="">
-                     <h2 class="title1 bg-white rounded-4 px-3 pb-1">Coming soon</h2>
+                    <h2 class="title1 bg-white rounded-4 px-3 pb-1">Coming soon</h2>
                 </div>
             </div>
 
@@ -863,7 +864,7 @@
                 <div class="img3-wrapper">
                     <img src="index-images/UVS.webp" class="images1 img-fluid rounded-5 w-100">
                     <h2 class="title bg-white rounded-4 px-3 pb-1">UVS</h2>
-                    
+
                 </div>
             </div>
 
@@ -872,7 +873,7 @@
                 <div class="img3-wrapper">
                     <img src="index-images/BLR-Passport.webp" class="images2 img-fluid rounded-5 w-100">
                     <h2 class="title bg-white rounded-4 px-3 pb-1">BLR Passport</h2>
-                    
+
                 </div>
             </div>
 
@@ -881,7 +882,7 @@
                 <div class="img3-wrapper">
                     <img src="index-images/consulting.webp" class="images3 img-fluid rounded-5 w-100">
                     <h2 class="title bg-white rounded-4 px-3 pb-1">Consulting</h2>
-                 
+
                 </div>
             </div>
         </div>
@@ -895,11 +896,11 @@
                 <div class="card-custom card-yellow">
                     <div class="bg-shape1">
 
-                    <h2 class="title bg-white rounded-4 px-md-3 px-2 pb-1">Hackathon | Competitions</h2>
+                        <h2 class="title bg-white rounded-4 px-md-3 px-2 pb-1">Hackathon | Competitions</h2>
                     </div>
                     <img src="index-images/Hackthon2.webp" class="main-img" alt="">
 
-                   
+
                 </div>
             </div>
 
@@ -912,7 +913,7 @@
 
                     <img src="index-images/Grants-Residency.webp" class="main-img" alt="">
 
-                    
+
                 </div>
             </div>
         </div>
@@ -2821,43 +2822,70 @@
             </div>
 
             <h1 class="text-center mb-4 mt-5">Collaborate</h1>
-            <form id="collabForm" action="#" method="POST">
+            <form id="collabForm" class="needs-validation" novalidate>
+
                 <div class="container my-5">
                     <div class="card p-4 shadow-sm">
 
                         <div class="row g-3">
 
                             <!-- NAME -->
-                            <div class=" col-12 col-md-6">
-                                <input type="text" class="collaborate form-control rounded-4 py-3" placeholder="Name*">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">
+                                    Name <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="collaborate form-control rounded-4 py-3"
+                                    placeholder="Enter your name" pattern="[A-Za-z ]+"
+                                    oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')" required>
+                                <div class="invalid-feedback">Please enter your name.</div>
                             </div>
 
                             <!-- EMAIL -->
                             <div class="col-12 col-md-6">
+                                <label class="form-label">
+                                    Email <span class="text-danger">*</span>
+                                </label>
                                 <input type="email" class="collaborate form-control rounded-4 py-3"
-                                    placeholder="Email*">
+                                    placeholder="Enter your email" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid Gmail (example@gmail.com)
+                                </div>
                             </div>
 
                             <!-- PHONE -->
                             <div class="col-12">
-                                <input type="text" class="collaborate form-control rounded-4 py-3" placeholder="Phone*">
+                                <label class="form-label">
+                                    Phone <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="collaborate form-control rounded-4 py-3"
+                                    placeholder="Enter your phone number" pattern="[0-9]{10}" maxlength="10"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                                <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
                             </div>
 
-                            <!-- HOW CAN WE COLLABORATE -->
+                            <!-- MESSAGE -->
                             <div class="col-12">
-                                <textarea class=" collaborate form-control rounded-4 py-3" rows="3"
-                                    placeholder="How can we collaborate?*"></textarea>
-                            </div>
-
-                            <!-- ANYTHING WE SHOULD KNOW -->
-                            <div class="col-12">
+                                <label class="form-label">
+                                    How can we collaborate? <span class="text-danger">*</span>
+                                </label>
                                 <textarea class="collaborate form-control rounded-4 py-3" rows="3"
-                                    placeholder="Anything we should know?"></textarea>
+                                    placeholder="Write your message" required></textarea>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+
+                            <!-- OPTIONAL -->
+                            <div class="col-12">
+                                <label class="form-label">
+                                    Anything we should know? <span class="text-danger">*</span>
+                                </label>
+                                <textarea class="collaborate form-control rounded-4 py-3" rows="3"
+                                    placeholder="Additional details" required></textarea>
+                                <div class="invalid-feedback">This field is required.</div>
                             </div>
 
                             <!-- BUTTON -->
                             <div class="col-12 d-flex">
-                                <button class="collab btn btn-dark col-4 w-lg-md-25 rounded-4 py-3">
+                                <button class="collab btn btn-dark col-4 rounded-4 py-3" type="submit">
                                     Let's Collaborate
                                 </button>
                             </div>
@@ -2865,163 +2893,164 @@
                         </div>
 
                     </div>
-
                 </div>
-        </div>
-    </div>
-    </form>
 
-    <!-- collaborate js -->
+            </form>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+            <!-- collaborate js -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-            const form = document.getElementById("collabForm");
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-            const nameInput = document.querySelector('input[placeholder="Name*"]');
-            const emailInput = document.querySelector('input[placeholder="Email*"]');
-            const phoneInput = document.querySelector('input[placeholder="Phone*"]');
-            const messageInput = document.querySelector('textarea[placeholder="How can we collaborate?*"]');
+            <script>
+                (function () {
+                    'use strict';
 
-            form.addEventListener("submit", function (e) {
+                    const form = document.getElementById('collabForm');
+                    const inputs = form.querySelectorAll('.form-control');
 
-                e.preventDefault();
+                    // 🚀 SUBMIT
+                    form.addEventListener('submit', function (event) {
 
-                let isValid = true;
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
 
-                // Reset borders
-                [nameInput, emailInput, phoneInput, messageInput].forEach(input => {
-                    input.style.border = "1px solid #ced4da";
-                });
+                            form.classList.add('was-validated');
 
-                // Name validation
-                if (nameInput.value.trim() === "") {
-                    nameInput.style.border = "2px solid red";
-                    isValid = false;
-                }
+                            Swal.fire({
+                                title: "Invalid!",
+                                text: "Please fill all required fields correctly.",
+                                icon: "error",
+                                draggable: true
+                            });
 
-                // Email validation
-                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
-                if (!emailPattern.test(emailInput.value.trim())) {
-                    emailInput.style.border = "2px solid red";
-                    isValid = false;
-                }
+                        } else {
+                            event.preventDefault();
 
-                // Phone validation
-                const phonePattern = /^[0-9]{10}$/;
-                if (!phonePattern.test(phoneInput.value.trim())) {
-                    phoneInput.style.border = "2px solid red";
-                    isValid = false;
-                }
+                            Swal.fire({
+                                title: "Success!",
+                                text: "Form submitted successfully!",
+                                icon: "success",
+                                draggable: true
+                            });
 
-                // Message validation
-                if (messageInput.value.trim() === "") {
-                    messageInput.style.border = "2px solid red";
-                    isValid = false;
-                }
+                            form.reset();
+                            form.classList.remove('was-validated');
 
-                // Final result
-                if (isValid) {
-                    alert("Form submitted successfully!");
-                    form.reset();
+                            inputs.forEach(input => {
+                                input.classList.remove('is-invalid', 'is-valid');
+                            });
+                        }
 
-                } else {
-                    alert("Please fill all required fields correctly.");
-                }
+                    }, false);
 
-            });
+                    inputs.forEach(input => {
+                        input.addEventListener('input', function () {
 
-        });
-    </script>
+                            // remove entire validation state
+                            form.classList.remove('was-validated');
+
+                            // remove individual error
+                            input.classList.remove('is-invalid');
+                        });
+                    });
+
+                })();
+            </script>
 
 
-
-    <div class="container ">
-        <div class="f-above-section card col-12 d-flex flex-column flex-lg-row 
+            <div class="container ">
+                <div class="f-above-section card col-12 d-flex flex-column flex-lg-row 
                 justify-content-between align-items-center gap-4 px-3 px-lg-5 rounded-5">
 
-            <h1 class="f-h1 text-center text-lg-start">
-                Stay Connected For Latest
-                Updates, Delivered Straight To
-                Your Inbox
-            </h1>
+                    <h1 class="f-h1 text-center text-lg-start">
+                        Stay Connected For Latest
+                        Updates, Delivered Straight To
+                        Your Inbox
+                    </h1>
 
-            <div class="email d-flex flex-row align-items-center gap-3 w-100 w-lg-50">
+                    <div class="email d-flex flex-row align-items-center gap-3 w-100 w-lg-50">
 
-                <input type="text" placeholder="Email" class="  email-input form-control p-3">
+                        <input type="text" placeholder="Email" class="  email-input form-control p-3">
 
-                <button class="sub btn btn-dark rounded-0 px-4 px-lg-5 fs-5 flex-shrink-0">
-                    Subscribe
-                </button>
+                        <button class="sub btn btn-dark rounded-0 px-4 px-lg-5 fs-5 flex-shrink-0">
+                            Subscribe
+                        </button>
 
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid bg-dark">
-        <div class="container">
-            <div class="row position-relative">
-
-                <div
-                    class="col-12 d-flex flex-column flex-lg-row flex-wrap justify-content-center align-items-start gap-3 mt-5 pt-5">
-
-                    <!-- ORGANISATION -->
-                    <div class="org col-12 col-md-6 col-lg-3">
-                        <h6 class="organisation text-secondary fw-bold mb-0">ORGANISATION</h6>
-                        <ul class="foot text-white list-unstyled fw-medium">
-                            <li>About Us</li>
-                            <li>Organisation</li>
-                            <li>Media - Toolkit</li>
-                            <li>Book Facilities</li>
-                            <li>80G | 12A | CSR-1 | FCRA</li>
-                        </ul>
                     </div>
-
-                    <div class="org col-12 col-md-6 col-lg-3">
-                        <h6 class="organisation text-secondary fw-bold mb-0">QUICK LINKS</h6>
-                        <ul class="foot text-white list-unstyled fw-medium">
-                            <li>Careers</li>
-                            <li>Contact Us</li>
-                            <li>Give Back</li>
-                            <li>Terms & Conditions</li>
-                            <li>Privacy Policy</li>
-                            <li>Refund & Cancellation</li>
-                        </ul>
-                    </div>
-
-                    <!-- SEARCH -->
-                    <div class="org col-12 col-md-6 col-lg-3">
-                        <h6 class="organisation text-secondary fw-bold mb-0">EXPLORE OUR CONTENT</h6>
-                        <input type="text" class="text bg-black w-100 px-3 py-3"
-                            placeholder="Type to start searching...">
-                    </div>
-
                 </div>
-
-                <!-- FOOTER -->
-                <footer
-                    class="row text-white align-items-center mt-5 pt-3  pb-5 text-center d-flex flex-row justify-content-around text-lg-start">
-
-                    <!-- LEFT -->
-                    <span class="col-12 col-lg-6 mb-3 mb-lg-0 text-center">
-                        Copyright@ 2021-22. Param Foundation. All Rights Reserved
-                    </span>
-
-                    <!-- RIGHT -->
-                    <div class="col-12 col-lg-6 d-flex justify-content-center flex-wrap gap-3 ">
-                        <a href="https://www.facebook.com/paramfoundation1"><i class="i1 fa-brands fa-facebook fa-lg text-white p-3 rounded-2"></i></a>
-                        <a href="https://x.com/paraminnovation"><i class="i1 fa-brands fa-x-twitter fa-lg text-white p-3 rounded-2"></i></a>
-                        <a href="https://www.youtube.com/@paramfoundation1"><i class="i1 fa-brands fa-youtube fa-lg text-white p-3 rounded-2"></i></a>
-                        <a href="https://www.linkedin.com/company/param-foundation/"><i class="i1 fa-brands fa-linkedin fa-lg text-white p-3 rounded-2"></i></a>
-                        <a href="https://www.whatsapp.com/channel/0029Vavkqa2KWEKkIMO2wk0R"><i class="i1 fa-brands fa-whatsapp fa-lg text-white p-3 rounded-2"></i></a>
-                    </div>
-
-                </footer>
             </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+            <div class="container-fluid bg-dark">
+                <div class="container">
+                    <div class="row position-relative">
+
+                        <div
+                            class="col-12 d-flex flex-column flex-lg-row flex-wrap justify-content-center align-items-start gap-3 mt-5 pt-5">
+
+                            <!-- ORGANISATION -->
+                            <div class="org col-12 col-md-6 col-lg-3">
+                                <h6 class="organisation text-secondary fw-bold mb-0">ORGANISATION</h6>
+                                <ul class="foot text-white list-unstyled fw-medium">
+                                    <li>About Us</li>
+                                    <li>Organisation</li>
+                                    <li>Media - Toolkit</li>
+                                    <li>Book Facilities</li>
+                                    <li>80G | 12A | CSR-1 | FCRA</li>
+                                </ul>
+                            </div>
+
+                            <div class="org col-12 col-md-6 col-lg-3">
+                                <h6 class="organisation text-secondary fw-bold mb-0">QUICK LINKS</h6>
+                                <ul class="foot text-white list-unstyled fw-medium">
+                                    <li>Careers</li>
+                                    <li>Contact Us</li>
+                                    <li>Give Back</li>
+                                    <li>Terms & Conditions</li>
+                                    <li>Privacy Policy</li>
+                                    <li>Refund & Cancellation</li>
+                                </ul>
+                            </div>
+
+                            <!-- SEARCH -->
+                            <div class="org col-12 col-md-6 col-lg-3">
+                                <h6 class="organisation text-secondary fw-bold mb-0">EXPLORE OUR CONTENT</h6>
+                                <input type="text" class="text bg-black w-100 px-3 py-3"
+                                    placeholder="Type to start searching...">
+                            </div>
+
+                        </div>
+
+                        <!-- FOOTER -->
+                        <footer
+                            class="row text-white align-items-center mt-5 pt-3  pb-5 text-center d-flex flex-row justify-content-around text-lg-start">
+
+                            <!-- LEFT -->
+                            <span class="col-12 col-lg-6 mb-3 mb-lg-0 text-center">
+                                Copyright@ 2021-22. Param Foundation. All Rights Reserved
+                            </span>
+
+                            <!-- RIGHT -->
+                            <div class="col-12 col-lg-6 d-flex justify-content-center flex-wrap gap-3 ">
+                                <a href="https://www.facebook.com/paramfoundation1" target="_blank"><i
+                                        class="i1 fa-brands fa-facebook fa-lg text-white p-3 rounded-2"></i></a>
+                                <a href="https://x.com/paraminnovation" target="_blank"><i
+                                        class="i1 fa-brands fa-x-twitter fa-lg text-white p-3 rounded-2"></i></a>
+                                <a href="https://www.youtube.com/@paramfoundation1" target="_blank"><i
+                                        class="i1 fa-brands fa-youtube fa-lg text-white p-3 rounded-2"></i></a>
+                                <a href="https://www.linkedin.com/company/param-foundation/" target="_blank"><i
+                                        class="i1 fa-brands fa-linkedin fa-lg text-white p-3 rounded-2"></i></a>
+                                <a href="https://www.whatsapp.com/channel/0029Vavkqa2KWEKkIMO2wk0R" target="_blank"><i
+                                        class="i1 fa-brands fa-whatsapp fa-lg text-white p-3 rounded-2"></i></a>
+                            </div>
+
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
